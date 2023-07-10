@@ -1,8 +1,6 @@
-import s from '../styles/Home.module.css';
-import Banner from './components/home/Banner';
+import s from "../styles/Home.module.css";
+import Board from "./components/home/Board";
 
 export default function Home() {
-    return (
-        <Banner></Banner>
-  )
+    return <Board></Board>;
 }

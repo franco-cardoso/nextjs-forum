@@ -1,13 +1,12 @@
-import Header from "./components/layout/Header"
+import Header from "./components/layout/Header";
 
 const Layout = (props) => {
-  return (
-    <div className="globalWrapper">
-        <Header></Header>
-        {props.children}
-    </div>
-    
-  )
-}
+    return (
+        <div className="globalWrapper">
+            <Header></Header>
+            <main>{props.children}</main>
+        </div>
+    );
+};
 
-export default Layout
+export default Layout;
