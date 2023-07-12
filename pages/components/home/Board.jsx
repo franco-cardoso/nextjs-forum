@@ -1,7 +1,10 @@
+import BoardSection from "./BoardSection"
 
 const Board = () => {
   return (
-    <div>Board</div>
+    <div>
+        <BoardSection></BoardSection>
+    </div>
   )
 }
 

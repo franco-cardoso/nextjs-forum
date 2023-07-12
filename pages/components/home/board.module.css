@@ -1,0 +1,92 @@
+.section {
+  padding: 8px;
+}
+
+.section-title {
+  background-color: #0f5579;
+  border-radius: 3px;
+}
+
+/* .table, .table th, .table td {
+    border: 1px solid rgb(255, 0, 0);
+  border-collapse: collapse;
+} */
+
+.table {
+    border-spacing: 0;
+}
+
+.table th {
+    padding: 5px;
+    text-align: center;
+}
+
+.table thead {
+    background-color: rgb(19, 18, 18);
+    color: #777777;
+}
+
+/* icons */
+.table thead tr th:nth-child(1) {
+    width: 300px;
+}
+
+/* forum */
+.table thead tr th:nth-child(2) {
+    width: 70%;
+    text-align: start;
+}
+
+.table thead tr th:nth-child(3), .table thead tr th:nth-child(4) {
+    width: 6%;
+}
+
+/* last post */
+.table thead tr th:nth-child(5) {
+    width: 20%;
+}
+
+.table h3 {
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.table h4 {
+    color: #cacaca;
+    margin: 0;
+}
+
+.table h3:hover, .table h4:hover {
+    color: #b9b9b9;
+}
+
+.table td {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.table tr td:nth-child(3), .table tr td:nth-child(4) {
+    text-align: center;
+}
+
+.table tr td:nth-child(5) {
+    padding: 0 0 0 40px;
+}
+
+.table p {
+    font-size: 14px;
+    color: #a1a1a1;
+}
+
+.section-title span {
+    color: white;
+    display: inline-block;
+    font-size: 17px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.137);
+}
