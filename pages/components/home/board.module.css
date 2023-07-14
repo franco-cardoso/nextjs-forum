@@ -19,10 +19,12 @@
 .table th {
     padding: 5px;
     text-align: center;
+    font-weight: 700;
 }
 
 .table thead {
     background-color: rgb(19, 18, 18);
+    font-size: 14px;
     color: #777777;
 }
 

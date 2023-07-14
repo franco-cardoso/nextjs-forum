@@ -1,6 +1,7 @@
+import { DateTime } from "luxon";
+
 const BoardForum = () => {
-  const d = new Date(Date.now())
-  console.log(d)
+  const d = DateTime.now().minus({ days: 1 });
 
   return (
     <tr>
@@ -20,11 +21,13 @@ const BoardForum = () => {
       <td>
         <a href="">
           <h4>MOTM: July Voting [OPEN]</h4>
-          <p>Yesterday, 02:48 PM By Preaux</p>
         </a>
+        <p>{`${capitalize(d.toRelativeCalendar())}, ${d.toFormat("h:mm a")}`} By Preaux</p>
       </td>
     </tr>
   );
 };
+
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 export default BoardForum;
