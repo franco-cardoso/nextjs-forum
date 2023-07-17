@@ -1,9 +1,13 @@
 import BoardSection from "./BoardSection"
 
+  
+
 const Board = () => {
+
   return (
     <div>
-        <BoardSection></BoardSection>
+        <BoardSection title="Momentum" category="momentum"></BoardSection>
+        <BoardSection title="General & Off-topic" category="general"></BoardSection>
     </div>
   )
 }
