@@ -26,3 +26,22 @@
 .header ul li a:hover {
     color: rgb(165, 165, 165);
 }
+
+.login-button {
+  position: relative;
+}
+
+.form-wrapper {
+  position: absolute;
+  padding: 20px;
+  background-color: #242424;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-size: 14px;
+}

@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Banner from "./Banner";
 import s from "./Header.module.css";
+import Login from "./Login";
 
 const Header = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
   return (
     <header className={s.header}>
       <div className={s["buttons-wrapper"]}>
@@ -30,8 +34,9 @@ const Header = () => {
 
         <div className={s.login}>
           <ul>
-            <li>
-              <a href="">Sign In</a>
+            <li className={s["login-button"]}>
+              <a onClick={() => setShowLogin(!showLogin)}>Sign In</a>
+              {showLogin && <Login></Login>}
             </li>
             <li>
               <a href="/sign-up">Create Account</a>
