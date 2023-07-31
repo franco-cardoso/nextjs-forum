@@ -3,7 +3,7 @@ import s from "./banner.module.css";
 const Banner = () => {
     return (
         <div className={s["banner-wrapper"]}>
-            <h1>LOGO</h1>
+            <h1>MOMENTUM</h1>
         </div>
     );
 };

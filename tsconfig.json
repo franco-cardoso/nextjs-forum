@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/components/home/Board.jsx", "pages/components/home/BoardSection.jsx", "pages/components/home/BoardForum.jsx", "pages/api/create-pets-table.js"  ],
   "exclude": [
     "node_modules"
   ]
