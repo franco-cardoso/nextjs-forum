@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { createToken } from "./scripts";
 import { compare } from "bcryptjs";
 import { NextResponse } from "next/server";
+import { setCookie } from "cookies-next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -19,13 +20,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (!user) return res.status(400).json("Username or password incorrect");
 
         return compare(password, user.password)
-            .then((result) => {
-
+            .then(async (result) => {
                 if (result) {
-                    res.setHeader("set-cookie", `token=${createToken(user.userid)}; path=/; samesite=lax; httponly;`)
-                        .status(200)
-                        .json("Successfully logged in");
-
+                    setCookie("jwt", await createToken(user.userid), { req, res });
+                    res.status(200).json("Successfully logged in");
                 } else res.status(400).json("Username or password incorrect");
             })
             .catch((err) => res.status(400).json(err));

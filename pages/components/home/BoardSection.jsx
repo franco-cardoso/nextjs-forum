@@ -7,7 +7,6 @@ const BoardSection = ({title, category}) => {
   useEffect(() => {
     fetch(`http://localhost:3000/api/get-forums?category=${category}`).then((response) =>
       response.json().then((result) => {
-        console.log(result)
         setForums(result.data);
       })
     );

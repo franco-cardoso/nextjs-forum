@@ -1,13 +1,9 @@
-import jwt from "jwt-simple";
-import { DateTime } from "luxon";
+import * as jose from "jose";
 
-export const createToken = (userID: string): string => {
-    return jwt.encode(
-        {
-            sub: userID,
-            iat: DateTime.now().toMillis(),
-            exp: DateTime.now().plus({ days: 30 }).toMillis(),
-        },
-        process.env.JWT_SECRET
-    );
+export const createToken = async (userID: string): Promise<string> => {
+    return await new jose.SignJWT({ userID })
+        .setProtectedHeader({ alg: "HS256" })
+        .setIssuedAt()
+        .setExpirationTime("30d")
+        .sign(new TextEncoder().encode(`secret-key-phrase`));
 };
