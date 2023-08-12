@@ -11,12 +11,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         let user;
 
         if (username.includes("@")) {
-            const data = await db.sql`SELECT * FROM Users WHERE Email = ${username}`;
+            const data = await db.query("SELECT * FROM Users WHERE Username = 'test'",[username]);
             user = data.rows[0];
         } else {
-            const data = await db.sql`SELECT * FROM Users WHERE Username = ${username}`;
+            const data = await db.query("SELECT * FROM Users WHERE Email = $1",[username]);
+            console.log(data)
             user = data.rows[0];
         }
+        return console.log(user)
         if (!user) return res.status(400).json("Username or password incorrect");
 
         return compare(password, user.password)
