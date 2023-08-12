@@ -1,6 +1,5 @@
 import { db } from "@vercel/postgres";
 import { NextApiRequest, NextApiResponse } from "next";
-import uuid from 'uuid'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {

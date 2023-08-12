@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import s from "./Header.module.css";
 import Login from "./Login";
 import { GlobalContext } from "../../_app";
+import Link from "next/link";
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -14,22 +15,22 @@ const Header = () => {
                 <nav>
                     <ul>
                         <li>
-                            <a href="/">Home</a>
+                            <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <a href="">Upgrade</a>
+                            <Link href="">Upgrade</Link>
                         </li>
                         <li>
-                            <a href="">Search</a>
+                            <Link href="">Search</Link>
                         </li>
                         <li>
-                            <a href="">Awards</a>
+                            <Link href="">Awards</Link>
                         </li>
                         <li>
-                            <a href="">Auth</a>
+                            <Link href="">Auth</Link>
                         </li>
                         <li>
-                            <a href="">Vouches</a>
+                            <Link href="">Vouches</Link>
                         </li>
                     </ul>
                 </nav>

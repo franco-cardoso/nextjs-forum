@@ -1,15 +1,13 @@
-import BoardSection from "./BoardSection"
+import BoardSection from "./BoardSection";
 
-  
 
-const Board = () => {
+const Board = ({data}) => {
+    return (
+        <div>
+            <BoardSection title="Momentum" forums={data["momentum"]}></BoardSection>
+            <BoardSection title="General & Off-topic" forums={data["general"]}></BoardSection>
+        </div>
+    );
+};
 
-  return (
-    <div>
-        <BoardSection title="Momentum" category="momentum"></BoardSection>
-        <BoardSection title="General & Off-topic" category="general"></BoardSection>
-    </div>
-  )
-}
-
-export default Board
+export default Board;

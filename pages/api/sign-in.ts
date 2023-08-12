@@ -8,17 +8,9 @@ import { setCookie } from "cookies-next";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const { username, password } = req.body;
-        let user;
 
-        if (username.includes("@")) {
-            const data = await db.query("SELECT * FROM Users WHERE Username = 'test'",[username]);
-            user = data.rows[0];
-        } else {
-            const data = await db.query("SELECT * FROM Users WHERE Email = $1",[username]);
-            console.log(data)
-            user = data.rows[0];
-        }
-        return console.log(user)
+        const data = await db.query(`SELECT * FROM Users WHERE ${username.includes("@") ? "Email" : "Username"} = $1`, [username,]);
+        const user = data.rows[0];
         if (!user) return res.status(400).json("Username or password incorrect");
 
         return compare(password, user.password)

@@ -2,16 +2,7 @@ import { useEffect, useState } from "react";
 import BoardForum from "./BoardForum";
 import s from "./board.module.css";
 
-const BoardSection = ({title, category}) => {
-  const [forums, setForums] = useState(undefined);
-  useEffect(() => {
-    fetch(`http://localhost:3000/api/get-forums?category=${category}`).then((response) =>
-      response.json().then((result) => {
-        setForums(result.data);
-      })
-    );
-  }, []);
-
+export default function BoardSection ({title, forums}) {
   return (
     <section className={s["section"]}>
       <div className={s["section-title"]}>
@@ -28,7 +19,7 @@ const BoardSection = ({title, category}) => {
           </tr>
         </thead>
         <tbody>
-          {forums?.rows.map((item) => (
+          {forums.map((item) => (
             <BoardForum key={item.id} title={item.title} name={item.name} description={item.description}></BoardForum>
           ))}
         </tbody>
@@ -36,5 +27,3 @@ const BoardSection = ({title, category}) => {
     </section>
   );
 };
-
-export default BoardSection;

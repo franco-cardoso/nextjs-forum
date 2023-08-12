@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from "./signup.module.css";
 import axios from "axios";
 
-export default function index() {
+export default function index(props) {
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -25,7 +25,6 @@ export default function index() {
                 },
             })
             .then((res) => {
-                console.log(res);
                 document.location = "/";
             })
             .catch((err) => console.log(err));
