@@ -19,7 +19,7 @@ export default function BoardSection ({title, forums}) {
           </tr>
         </thead>
         <tbody>
-          {forums.map((item) => (
+          {forums?.map((item) => (
             <BoardForum key={item.id} title={item.title} name={item.name} description={item.description}></BoardForum>
           ))}
         </tbody>
