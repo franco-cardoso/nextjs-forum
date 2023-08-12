@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 import { genSalt, hash } from "bcryptjs";
 import { NextApiRequest, NextApiResponse } from "next";
 import { setCookie } from "cookies-next";
-import createToken from "./scripts";
+import { createToken } from "./scripts";
 
 async function isTaken(field, content) {
     switch (field) {
