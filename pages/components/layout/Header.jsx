@@ -49,7 +49,7 @@ const Header = () => {
                                 {showLogin && <Login></Login>}
                             </li>
                             <li>
-                                <a href="/sign-up">Create Account</a>
+                                <Link href="/sign-up">Create Account</Link>
                             </li>
                         </ul>
                     )}
