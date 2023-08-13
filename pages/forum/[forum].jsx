@@ -2,9 +2,8 @@ import { useRouter } from "next/router";
 import Sboard from "../components/home/board.module.css";
 import s from "./forum.module.css";
 import Thread from "./Thread";
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "../_app";
 import Link from "next/link";
+import {getCookie} from 'cookies-next'
 
 export const getServerSideProps = async ({ params }) => {
     const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-threads?forum=${params.forum}`);
@@ -14,13 +13,11 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function Forum({threads}) {
-    const { currentUser } = useContext(GlobalContext);
     const router = useRouter();
-    console.log(threads)
 
     return (
         <section className={Sboard["section"]}>
-            <Link href={currentUser ? `/forum/create-thread?forum=${router.query.forum}` : "/login"}>
+            <Link href={getCookie("jwt") ? `/forum/create-thread?forum=${router.query.forum}` : "/login"}>
                 Create Thread
             </Link>
             <div className={Sboard["section-title"]}>

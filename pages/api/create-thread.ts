@@ -3,11 +3,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
-        console.log(req.body)
         const { title, content, forum } = req.body;
-        return db.sql`INSERT INTO Threads (Title, Content, Forum, Author) VALUES (${title}, ${content}, ${forum}, ${
-            req.headers["x-userid"] as string
-        })`
+        const userId: string = req.headers["x-userid"] as string;
+
+        const { rows } = await db.sql`SELECT Username FROM Users WHERE UserID = ${userId}`;
+        
+        return db.sql`INSERT INTO Threads (Title, Content, Forum, Author,AuthorID) VALUES (${title}, ${content}, ${forum}, ${rows[0].username},${userId})`
             .then((result) => res.status(200).json(result))
             .catch((err) => res.status(500).json(err));
     } catch (err) {

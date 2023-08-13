@@ -10,7 +10,7 @@ function Thread({ title, author, date }) {
                     <h3>{title}</h3>
                 </Link>
                 <p>
-                    Started by <User userId={author}></User>
+                    Started by <User username={author}></User>
                 </p>
             </td>
             <td>
