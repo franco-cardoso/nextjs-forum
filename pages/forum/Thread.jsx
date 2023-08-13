@@ -1,14 +1,17 @@
 import Link from "next/link";
+import User from "../components/misc/User";
 
-function Thread() {
+function Thread({ title, author, date }) {
     return (
         <tr>
             <td></td>
             <td>
                 <Link href={`/forum/a`}>
-                    <h3>test</h3>
+                    <h3>{title}</h3>
                 </Link>
-                <p>etat</p>
+                <p>
+                    Started by <User userId={author}></User>
+                </p>
             </td>
             <td>
                 <p>

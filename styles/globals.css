@@ -45,3 +45,12 @@ button {
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
+
+.user-button { 
+    font-weight: bold;
+    color: rgb(136, 175, 248);
+}
+
+.user-button:hover{
+    text-decoration: underline;
+}

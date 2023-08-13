@@ -6,9 +6,17 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "../_app";
 import Link from "next/link";
 
-export default function Forum() {
+export const getServerSideProps = async ({ params }) => {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-threads?forum=${params.forum}`);
+    const threads = await data.json();
+
+    return { props: { threads } };
+};
+
+export default function Forum({threads}) {
     const { currentUser } = useContext(GlobalContext);
     const router = useRouter();
+    console.log(threads)
 
     return (
         <section className={Sboard["section"]}>
@@ -20,7 +28,9 @@ export default function Forum() {
             </div>
             <table className={Sboard["table"] + " " + s["table"]}>
                 <tbody>
-                    <Thread></Thread>
+                    {threads?.map(el => (
+                        <Thread title={el.title} author={el.author} key={el.id} ></Thread>
+                    ))}
                 </tbody>
             </table>
         </section>

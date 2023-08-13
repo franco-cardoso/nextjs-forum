@@ -24,7 +24,7 @@ function index() {
                 "Content-Type": "application/json",
             },
         })
-            .then((res) => console.log(res))
+            .then((res) => document.location = "/forum/" + router.query.forum)
             .catch((err) => console.log(err));
     };
 
