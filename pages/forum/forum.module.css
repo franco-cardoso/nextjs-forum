@@ -2,9 +2,6 @@
     width: 100%;
 }
 
-.table tr td {
-    /* background-color: red; */
-}
 
 .table tr td:nth-child(1) {
     width: 4%;
