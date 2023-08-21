@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 export default async function handler(request, response) {
   try {
     const {forumName, forumDesc, forumCateg} = request.query;
-    if (!forumName || !forumDesc) throw new Error('Forum name and description required');
+    if (!forumName || !forumDesc) return response.status(400).json("Forum name and description required");
     await sql`INSERT INTO Forums (Name, Description, Category) VALUES (${forumName}, ${forumDesc}, ${forumCateg});`;
   } catch (error) {
     return response.status(500).json({ error });

@@ -1,16 +1,20 @@
 import Link from "next/link";
 import User from "../components/misc/User";
+import { DateTime } from "luxon";
 
-function Thread({ title, author, date }) {
+function Thread({ title, author, date, id }) {
+    const dt = DateTime.fromSeconds(+date).toRelative()
+    console.log(DateTime.fromMillis(1692648837))
+
     return (
         <tr>
             <td></td>
             <td>
-                <Link href={`/forum/a`}>
+                <Link href={`/thread/${id}`}>
                     <h3>{title}</h3>
                 </Link>
                 <p>
-                    Started by <User username={author}></User>
+                    Started by <User username={author} />
                 </p>
             </td>
             <td>
@@ -29,7 +33,7 @@ function Thread({ title, author, date }) {
                 <a href="">
                     <h4>MOTM: July Voting [OPEN]</h4>
                 </a>
-                <p>{`yeterday, 2}`} By Preaux</p>
+                <p>{dt} By <User username={author} /></p>
             </td>
         </tr>
     );
