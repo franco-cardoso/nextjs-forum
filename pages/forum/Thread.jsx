@@ -3,8 +3,7 @@ import User from "../components/misc/User";
 import { DateTime } from "luxon";
 
 function Thread({ title, author, date, id }) {
-    const dt = DateTime.fromSeconds(+date).toRelative()
-    console.log(DateTime.fromMillis(1692648837))
+    const dt = DateTime.fromSeconds(+date).setLocale("en-US").toRelative()
 
     return (
         <tr>

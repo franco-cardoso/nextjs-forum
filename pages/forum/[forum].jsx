@@ -13,9 +13,7 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function Forum({ threads }) {
-    const router = useRouter();
-    const forum = router.query.forum;
-
+    const forum = useRouter().query.forum;
     return (
         <section className={Sboard["section"]}>
             <Link href={getCookie("jwt") ? `/forum/create-thread?forum=${forum}` : "/login"}>Create Thread</Link>
