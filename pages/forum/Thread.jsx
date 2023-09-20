@@ -1,16 +1,18 @@
 import Link from "next/link";
 import User from "../components/misc/User";
 import { DateTime } from "luxon";
+import s from './forum.module.css'
 
-function Thread({ title, author, date, id }) {
-    const dt = DateTime.fromSeconds(+date).setLocale("en-US").toRelative()
+function Thread({ title, author, date, id, views }) {
+    const dt = DateTime.fromSeconds(+date).setLocale("en-US").toRelative();
 
     return (
         <tr>
             <td></td>
             <td>
-                <Link href={`/thread/${id}`}>
+                <Link className={s["title-wrapper"]} href={`/thread/${id}`}>
                     <h3>{title}</h3>
+                    <p>{dt}</p>
                 </Link>
                 <p>
                     Started by <User username={author} />
@@ -24,15 +26,17 @@ function Thread({ title, author, date, id }) {
             </td>
             <td>
                 <p>
-                    X <br />
+                    {views} <br />
                     Views
                 </p>
             </td>
             <td>
                 <a href="">
-                    <h4>MOTM: July Voting [OPEN]</h4>
+                    <h4>asds</h4>
                 </a>
-                <p>{dt} By <User username={author} /></p>
+                <p>
+                    {dt}
+                </p>
             </td>
         </tr>
     );

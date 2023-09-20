@@ -14,6 +14,7 @@ export const getServerSideProps = async ({ params }) => {
 
 export default function Forum({ threads }) {
     const forum = useRouter().query.forum;
+    
     return (
         <section className={Sboard["section"]}>
             <Link href={getCookie("jwt") ? `/forum/create-thread?forum=${forum}` : "/login"}>Create Thread</Link>
@@ -23,7 +24,7 @@ export default function Forum({ threads }) {
             <table className={Sboard["table"] + " " + s["table"]}>
                 <tbody>
                     {threads?.map((el) => (
-                        <Thread title={el.title} date={el.date} author={el.author} key={el.id} id={el.id} forum={forum}></Thread>
+                        <Thread title={el.title} date={el.date} author={el.author} key={el.id} id={el.id} forum={forum} views={el.views}></Thread>
                     ))}
                 </tbody>
             </table>

@@ -1,9 +1,13 @@
 import { useRouter } from "next/router";
 import React from "react";
-import s from './thread.module.css'
+import s from "./thread.module.css";
+import { useEffect } from "react";
 
 function Thread() {
     const thread = useRouter().query.thread;
+    useEffect(() => {
+        if (thread) fetch(`/api/add-view?t=${thread}`);
+    }, [thread]);
 
     return (
         <div>

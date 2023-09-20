@@ -2,6 +2,27 @@
     width: 100%;
 }
 
+.table h3 {
+    display: inline-block;
+    margin: 15px 0 5px;
+}
+
+.title-wrapper {
+    display: flex;
+    align-items:baseline;
+    gap: 10px;
+}
+
+.title-wrapper:hover h3 {
+    color: #b9b9b9;
+}
+
+.title-wrapper p {
+    font-size: 12px;
+
+}
+
+
 .table tr td {
     /* background-color: red; */
 }
@@ -17,9 +38,8 @@
     width: 7%;
 }
 
-
 .table tr td:nth-child(4) {
-    width: 7%
+    width: 7%;
 }
 
 .table tr td:nth-child(5) {
