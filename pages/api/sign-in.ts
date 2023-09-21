@@ -9,7 +9,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
         const { username, password } = req.body;
 
-        const data = await db.query(`SELECT * FROM Users WHERE ${username.includes("@") ? "Email" : "Username"} = $1`, [username,]);
+        const data = await db.query(
+            `SELECT * FROM Users WHERE ${username.includes("@") ? "lower(Email)" : "lower(Username)"} = $1`,
+            [username.toLowerCase()]
+        );
         const user = data.rows[0];
         if (!user) return res.status(400).json("Username or password incorrect");
 
