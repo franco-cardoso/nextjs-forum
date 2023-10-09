@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 import Link from "next/link";
 
-const BoardForum = ({ title, name, description }) => {
+const BoardForum = ({ title, threads, name, description }) => {
     const d = DateTime.now().minus({ days: 1 });
 
     return (
@@ -14,7 +14,7 @@ const BoardForum = ({ title, name, description }) => {
                 <p>{description}</p>
             </td>
             <td>
-                <p>129</p>
+                <p>{threads}</p>
             </td>
             <td>
                 <p>38,986</p>

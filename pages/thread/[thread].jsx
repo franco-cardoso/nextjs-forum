@@ -11,7 +11,7 @@ function Thread() {
 
     return (
         <div>
-            <div className={s["post"]}></div>
+            <div className={s["post"]}> </div>
         </div>
     );
 }
