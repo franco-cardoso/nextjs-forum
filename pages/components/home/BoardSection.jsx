@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import BoardForum from "./BoardForum";
 import s from "./board.module.css";
 
