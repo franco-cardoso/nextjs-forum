@@ -6,7 +6,7 @@ import { useEffect } from "react";
 // export const getStaticProps = async () => {
 //     const req = await fetch(process.env.NEXT_PUBLIC_URL + "/api/get-forums");
 //     const data = await req.json();
-//     return { props: {  } };
+//     return { props: { data } };
 // };
 
 export default function Home({ data }) {

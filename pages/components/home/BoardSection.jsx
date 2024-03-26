@@ -1,5 +1,8 @@
 import BoardForum from "./BoardForum";
 import s from "./board.module.css";
+import Spinner from "../misc/Spinner";
+import Spinnger from '../misc/spinnger.svg'
+import Image from "next/image";
 
 export default function BoardSection({ title, forums }) {
     return (
@@ -20,15 +23,22 @@ export default function BoardSection({ title, forums }) {
                 <tbody>
                     {forums?.map((item) => (
                         <BoardForum
-                            key={item.id}
-                            title={item.title}
-                            name={item.name}
-                            description={item.description}
-                            threads={item.threads}
+                        key={item.id}
+                        title={item.title}
+                        name={item.name}
+                        description={item.description}
+                        threads={item.threads}
                         ></BoardForum>
                     ))}
                 </tbody>
             </table>
+            {forums ? (
+                ""
+            ) : ( 
+                <div style={{ padding: "40px 0 40px 0"}}>
+                    <Image src={Spinnger} height={80}></Image>
+                </div>
+                )}
         </section>
     );
 }
