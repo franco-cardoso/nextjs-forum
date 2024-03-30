@@ -5,6 +5,7 @@ import Spinnger from '../misc/spinnger.svg'
 import Image from "next/image";
 
 export default function BoardSection({ title, forums }) {
+
     return (
         <section className={s["section"]}>
             <div className={s["section-title"]}>
@@ -28,6 +29,7 @@ export default function BoardSection({ title, forums }) {
                         name={item.name}
                         description={item.description}
                         threads={item.threads}
+                        lastPost= {item.lastPost}
                         ></BoardForum>
                     ))}
                 </tbody>

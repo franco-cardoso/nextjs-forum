@@ -1,8 +1,10 @@
 import { DateTime } from "luxon";
 import Link from "next/link";
+import User from "../misc/User"
 
-const BoardForum = ({ title, threads, name, description }) => {
-    const d = DateTime.now().minus({ days: 1 });
+const BoardForum = ({ title, threads, name, description, lastPost }) => {
+    const dt = DateTime.fromSeconds(+lastPost.date).setLocale("en-US").toRelative();;
+    console.log(lastPost)
 
     return (
         <tr>
@@ -21,9 +23,9 @@ const BoardForum = ({ title, threads, name, description }) => {
             </td>
             <td>
                 <a href="">
-                    <h4>MOTM: July Voting [OPEN]</h4>
+                    <h4>{lastPost.title}</h4>
                 </a>
-                <p>{`yeterday, ${d.toFormat("h:mm a")}`} By Preaux</p>
+                <p>{dt} By <User username={lastPost.author}/></p>
             </td>
         </tr>
     );
