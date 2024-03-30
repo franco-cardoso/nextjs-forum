@@ -2,6 +2,13 @@
     width: 100%;
 }
 
+.preloader {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
 .table h3 {
     display: inline-block;
     margin: 15px 0 5px;
