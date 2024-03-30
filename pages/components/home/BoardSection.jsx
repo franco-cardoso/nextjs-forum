@@ -18,7 +18,7 @@ export default function BoardSection({ title, forums }) {
                         <th>FORUM</th>
                         <th>THREADS</th>
                         <th>POSTS</th>
-                        <th>LAST POST</th>
+                        <th>LAST THREAD</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@ export default function BoardSection({ title, forums }) {
                         name={item.name}
                         description={item.description}
                         threads={item.threads}
-                        lastPost= {item.lastPost}
+                        lastThread= {item.lastThread}
                         ></BoardForum>
                     ))}
                 </tbody>

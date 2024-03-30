@@ -13,12 +13,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // query the amount of threads in forum
             const threadQuery: any = await db.sql`SELECT COUNT(Forum) FROM Threads WHERE Forum = ${el.name}`;
             // query the thread with the latest date
-            const lastPost: any = await db.sql`
+            const lastThread: any = await db.sql`
             SELECT * FROM Threads
             WHERE date = (SELECT MAX(date) FROM Threads WHERE Forum = ${el.name})`.catch(err => console.log(err));
 
             el.threads = threadQuery.rows[0].count;
-            el.lastPost = lastPost.rows[0];   
+            el.lastThread = lastThread.rows[0];   
 
             // separate the data by their categories and into @forums
             if (forums[el.category]) {
