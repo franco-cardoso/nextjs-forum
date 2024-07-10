@@ -9,16 +9,19 @@ export const GlobalContext = createContext();
 
 export default function MyApp({ Component, pageProps }) {
     const [currentUser, setCurrentUser] = useState(null);
-    
 
     useEffect(() => {
         axios("/api/token-login")
             .then((res) => {
+                // if (res.data.code) return;
+                if (!res.data.email) return;
                 if (Object.keys(res.data).length) {
-                    setCurrentUser({...res.data, jwt: getCookie("jwt")});
+                    setCurrentUser({ ...res.data, jwt: getCookie("jwt") });
                 }
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+            });
     }, []);
 
     return (

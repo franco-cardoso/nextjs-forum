@@ -1,0 +1,52 @@
+.thread-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.post {
+    display: grid;
+    grid-template-columns: 15% auto;
+    /* padding: 20px; */
+    border: solid rgba(255, 255, 255, 0.103) 1px;
+    border-radius: 6px;
+}
+
+.post-profile {
+    background-color: #18181d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.post-content-wrapper {
+    /* background-color: blue; */
+    padding: 15px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-date {
+    color: rgba(255, 255, 255, 0.507);
+    font-size: 13px;
+}
+
+.post-content {
+    min-height: 200px;
+}
+
+.addpost-wrapper {
+    padding: 20px;
+}
+
+.addpost-wrapper textarea {
+    width: 100%;
+    min-height: 200px;
+    background-color: #2f2f38;
+    color: white;
+    padding: 5px;
+}

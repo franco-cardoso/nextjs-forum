@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import * as jose from "jose";
 import { DateTime } from "luxon";
 const matcher = {
-    auth: ["/api/create-thread", "/api/create-forum", "/api/token-login"],
+    auth: ["/api/create-post","/api/create-thread", "/api/create-forum", "/api/token-login"],
 };
 
 export async function middleware(req: NextRequest) {
