@@ -9,9 +9,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export const getServerSideProps = async ({ params }) => {
-    // const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-threads?forum=${params.forum}`);
-    // const threads = await data.json();
-
     return { props: { forum: params.forum } };
 };
 
