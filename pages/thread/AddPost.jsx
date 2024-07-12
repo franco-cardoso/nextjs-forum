@@ -4,8 +4,9 @@ import { GlobalContext } from "../_app";
 import { DateTime } from "luxon";
 import axios from "axios";
 import { headers } from "next/dist/client/components/headers";
+import { Router } from "next/router";
 
-function AddPost({ threadId }) {
+function AddPost({threadId}) {
     const { currentUser } = useContext(GlobalContext);
 
     const [postData, setPostData] = useState({
@@ -35,6 +36,7 @@ function AddPost({ threadId }) {
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+        window.location.reload()
     };
 
     return (

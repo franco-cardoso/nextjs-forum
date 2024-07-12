@@ -3,7 +3,7 @@ import User from "../components/misc/User";
 import { DateTime } from "luxon";
 import s from './forum.module.css'
 
-function Thread({ title, author, date, id, views }) {
+function Thread({ title, author, date, id, views, replies }) {
     const dt = DateTime.fromSeconds(+date).setLocale("en-US").toRelative();
 
     return (
@@ -20,7 +20,7 @@ function Thread({ title, author, date, id, views }) {
             </td>
             <td>
                 <p>
-                    X <br />
+                    {replies} <br />
                     Replies
                 </p>
             </td>

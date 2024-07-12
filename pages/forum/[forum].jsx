@@ -41,6 +41,7 @@ export default function Forum({ forum }) {
                             id={el.id}
                             forum={forum}
                             views={el.views}
+                            replies={el.replies}
                         ></Thread>
                     ))}
                 </tbody>

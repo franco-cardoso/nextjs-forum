@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 
 function Post(data) {
     const { author, content, date } = data.data;
-    const dateFormat = DateTime.fromSeconds(+date).toRelative()
+    // const dateFormat = DateTime.fromSeconds(+date).toRelative()
 
     return (
         <div className={s["post"]}>
@@ -14,7 +14,7 @@ function Post(data) {
             </div>
             <div className={s["post-content-wrapper"]}>
                 <div>
-                    <span className={s["post-date"]}>{dateFormat}</span>
+                    <span className={s["post-date"]}>{date}</span>
                 </div>
                 <div className={s["post-content"]}>{content}</div>
             </div>
