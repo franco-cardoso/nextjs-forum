@@ -6,6 +6,14 @@
 // import { headers } from "next/dist/client/components/headers";
 // import { Router } from "next/router";
 
+function awa() {
+    return ( 
+        <div></div>
+     );
+}
+
+export default awa;
+
 // function AddPost({threadId}) {
 //     const { currentUser } = useContext(GlobalContext);
 

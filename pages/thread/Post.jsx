@@ -2,6 +2,14 @@
 // import User from "../components/misc/User";
 // import { DateTime } from "luxon";
 
+function wawa() {
+    return ( 
+        <div></div>
+     );
+}
+
+export default wawa;
+
 // function Post(data) {
 //     const { author, content, date } = data.data;
 //     const dateFormat = DateTime.fromSeconds(+date).toRelative()
