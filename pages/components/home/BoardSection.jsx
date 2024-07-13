@@ -22,7 +22,7 @@ export default function BoardSection({ title, forums }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {forums?.map((item) => (
+                    {forums ? forums.map((item) => (
                         <BoardForum
                         key={item.id}
                         title={item.title}
@@ -31,7 +31,7 @@ export default function BoardSection({ title, forums }) {
                         threads={item.threads}
                         lastThread= {item.lastThread}
                         ></BoardForum>
-                    ))}
+                    )) : ""}
                 </tbody>
             </table>
             {forums ? (

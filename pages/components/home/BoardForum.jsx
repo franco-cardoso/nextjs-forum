@@ -4,7 +4,7 @@ import User from "../misc/User"
 
 const BoardForum = ({ title, threads, name, description, lastThread }) => {
     // const dt = DateTime.fromSeconds(+lastThread.date).setLocale("en-US").toRelative();;
-    const dt = lastThread?.date
+    const dt = lastThread.date
 
     return (
         <tr>

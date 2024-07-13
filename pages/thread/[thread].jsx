@@ -27,11 +27,11 @@ function Thread({threadData, posts}) {
         <div className={s["thread-wrapper"]}>
             <Post data={threadData}></Post>
             {
-                posts?.map((el) => (
+                posts ? posts.map((el) => (
                     <Post data={el}></Post>
 
-                ))
-            }
+                )) : ""
+            }   
             <AddPost threadId={threadData.id}></AddPost>
         </div>
     );
