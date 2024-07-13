@@ -3,7 +3,7 @@ import User from "../components/misc/User";
 import { DateTime } from "luxon";
 
 function Post(data) {
-    const { author, content, date } = data.data;
+    const { author, content, date } = data?.data;
     // const dateFormat = DateTime.fromSeconds(+date).toRelative()
     const dateFormat = date
 
