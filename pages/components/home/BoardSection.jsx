@@ -22,7 +22,7 @@ export default function BoardSection({ title, forums }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {forums ? forums.map((item) => (
+                    {forums.length ? forums.map((item) => (
                         <BoardForum
                         key={item.id}
                         title={item.title}

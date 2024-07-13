@@ -27,7 +27,7 @@ function Thread({threadData, posts}) {
         <div className={s["thread-wrapper"]}>
             <Post data={threadData}></Post>
             {
-                posts ? posts.map((el) => (
+                posts.length ? posts.map((el) => (
                     <Post data={el}></Post>
 
                 )) : ""
