@@ -1,8 +1,11 @@
 import { DateTime } from "luxon";
 import Link from "next/link";
+import User from "../misc/User"
 
-const BoardForum = ({ title, threads, name, description }) => {
-    const d = DateTime.now().minus({ days: 1 });
+const BoardForum = ({ title, threads, name, description, lastThread }) => {
+    // const dt = DateTime.fromSeconds(+lastThread.date).setLocale("en-US").toRelative();;
+    const dt = lastThread.date
+    console.log(lastThread)
 
     return (
         <tr>
@@ -20,10 +23,10 @@ const BoardForum = ({ title, threads, name, description }) => {
                 <p>38,986</p>
             </td>
             <td>
-                <a href="">
-                    <h4>MOTM: July Voting [OPEN]</h4>
-                </a>
-                <p>{`yeterday, ${d.toFormat("h:mm a")}`} By Preaux</p>
+                <Link href={`/thread/${lastThread.id}`}>
+                    <h4>{lastThread.title}</h4>
+                <p>{dt} By <User username={lastThread.author}/></p>
+                </Link>
             </td>
         </tr>
     );
